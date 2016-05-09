@@ -1,0 +1,30 @@
+<style>
+#button {
+	height:2.2em;
+	margin:-5em 0em 0em 15em;
+}
+#remove {
+	height:2.2em;
+}
+#size {
+	font-size: 1.5em;
+}
+</style>
+<div ng-controller="playersController">
+  	<form>
+  		<p>Name:
+    	<input type="text" ng-model="newPlayer.name">
+    	</p>
+    	<input type="submit" ng-click='addPlayer()' id="button" class="btn btn-info" value="Add Player">
+  	</form>
+  	<table class="table table-bordered">
+  		<tr>
+      		<th>Name</th>
+      		<th>Actions</th>
+    	</tr>
+    	<tr ng-repeat="player in players">
+      		<td id="size">{{player.name}}</td>
+      		<td ng-click='removePlayer(player)'><button id="remove" class="btn btn-default center-block">Remove Player</button></td>
+    	</tr>
+  	</table>
+</div>

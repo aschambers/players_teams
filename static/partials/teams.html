@@ -1,0 +1,29 @@
+<style>
+#button {
+	height:2.2em;
+	margin:-5em 0em 0em 15em;
+}
+#size {
+	font-size: 1.5em;
+}
+</style>
+<div ng-controller='teamsController'>
+	<form>
+		<p>Name:
+        <input type="text" ng-model="newTeam.name">
+        </p>
+        <input type="submit" ng-click='addTeam()' id="button" class="btn btn-info" value="Add Team">
+    </form>
+    <div>
+        <table class="table table-bordered">
+            <tr>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+            <tr ng-repeat="team in teams">
+                <td id="size">{{ team.name }}</td>
+                <td><button ng-click='removeTeam(team)' class="btn btn-default center-block">Remove Team</button></td>
+            </tr>
+        </table>
+    </div>
+</div>
